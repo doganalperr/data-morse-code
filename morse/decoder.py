@@ -1,4 +1,7 @@
 
+"""
+This module provides functions to decode Morse code into text.
+"""
 
 from morse.mapping import MORSE
 
@@ -6,6 +9,7 @@ from morse.mapping import MORSE
 REVERSE_MORSE = {value: key for key, value in MORSE.items()}
 
 def decode_word(morse_word):
+    """Decode a single Morse word into text."""
     letters = morse_word.split()
     decoded_letters = []
 
@@ -19,6 +23,7 @@ def decode_word(morse_word):
 
 
 def decode(morse_text):
+    """Decode Morse code into uppercase text."""
     words = morse_text.split("|")
     decoded_words = []
 
@@ -31,10 +36,10 @@ def decode(morse_text):
 if __name__ == "__main__":
     from morse.encoder import encode
 
-    text = "Hi Guys"
-    encoded = encode(text)
-    decoded = decode(encoded)
+    TEXT = "Hi Guys"
+    ENCODED = encode(TEXT)
+    DECODED = decode(ENCODED)
 
-    print("Original :", text)
-    print("Encoded  :", encoded)
-    print("Decoded  :", decoded)
+    print("Original :", TEXT)
+    print("Encoded  :", ENCODED)
+    print("Decoded  :", DECODED)
